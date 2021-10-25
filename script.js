@@ -5,3 +5,8 @@ for (let i = 1; i <= 25; i += 1){
     criarQuadro.className = 'pixel'
     qPixels.appendChild(criarQuadro);
 }
+
+window.onload = function () {
+    let colorBlack = document.querySelector('#black')
+    colorBlack.className = 'color selected';
+}
