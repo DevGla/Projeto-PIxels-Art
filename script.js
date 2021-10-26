@@ -13,7 +13,7 @@ window.onload = function () {
 
 let clickColor = document.querySelectorAll('.color');
 
-//loop adicionando evento nos elementos
+
 for (let i = 0; i < clickColor.length; i +=1){
     clickColor[i].addEventListener('click', getColor)
 };
@@ -21,8 +21,22 @@ for (let i = 0; i < clickColor.length; i +=1){
 function getColor (evento){
     let corSelecionada = document.querySelector('.selected');
     corSelecionada.classList.remove('selected');
-    evento.target.classList.add('selected');
+    evento.target.classList.add('selected');    
 }
 
-//pega o elemento selecionado e remove a classe selected
-//adiciona no elemento selecionado com o target
+let selected = 'black';
+for (let i of clickColor){
+    i.addEventListener('click', function(param){
+        selected = param.target.id;
+    })
+}
+let pixel = document.querySelectorAll('.pixel');
+for (let i of pixel){
+    i.addEventListener('click', function(pixelColor){
+        pixelColor.target.style.backgroundColor = selected;
+    })
+};
+
+
+
+
